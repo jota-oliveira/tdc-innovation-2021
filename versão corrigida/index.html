@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<!-- Pronuncia em português -->
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="./style.css" />
+
+    <title>Rede social <span lang="en">Twistter</span></title>
+  </head>
+
+  <body>
+    <!-- Podemos abrir uma seção on o menu estará dentro -->
+    <section id="menuPrincipal">
+      <div class="imgContainer">
+        <!-- Mantém o alt vazio pois a imagem é meramente ilustrativa -->
+        <img alt="" src="./twisterlogo.png" />
+      </div>
+
+      <nav aria-label="Menu de ações">
+        <!-- Atribuindo a função de barra de menu, é um container de "menuitem" -->
+        <ul
+          role="menubar"
+          aria-label="Menu de ações"
+        >
+          <li><a role="menuitem" href="#">Início</a></li>
+          <li><a role="menuitem" href="#">Explorar</a></li>
+          <li><a role="menuitem" href="#">Notificações</a></li>
+          <li><a role="menuitem" href="#">Mensagens</a></li>
+          <li><a role="menuitem" href="#">Perfil</a></li>
+        </ul>
+      </nav>
+    </section>
+
+    <!-- Definimos onde está nosso conteúdo principal -->
+    <main id="container">
+
+      <header id="cabecalho">
+        <h1>Início</h1>
+      </header>
+
+      <form id="formTwist">
+        <label class="esconderVisualmente" id="twistAction">Pesquisar sobre algum assunto na rede social</label>
+        <input  type="text" name="twist" placeholder="Escreva seu primeiro twist" aria-labelledby="twistAction" />
+        <button>Twist</button>
+      </form>
+
+      <article id="conteudoPrincipalContainer">
+        <div class="post">
+          <div class="nomePessoa">Michael Jordan</div>
+          <p class="conteudoPost">I'm the best ever, and that is it.</p>
+        </div>
+
+        <div class="post">
+          <div class="nomePessoa">Pascal Siakam</div>
+          <p class="conteudoPost">#weTheNorth, go raptors!</p>
+        </div>
+
+        <div class="post">
+          <div class="nomePessoa">Fred Vanvleet</div>
+          <p class="conteudoPost">3pts is so simple for me</p>
+        </div>
+
+        <div class="post">
+          <div class="nomePessoa">Dikembe Mutombo</div>
+          <p class="conteudoPost">Not in my house, man</p>
+        </div>
+
+        <div class="post">
+          <div class="nomePessoa">Lebron James</div>
+          <p class="conteudoPost">Black lives matter... </p>
+        </div>
+
+        <div class="post">
+          <div class="nomePessoa">Pascal Siakam</div>
+          <p class="conteudoPost">#weTheNorth, go raptors!</p>
+        </div>
+
+        <div class="post">
+          <div class="nomePessoa">Fred Vanvleet</div>
+          <p class="conteudoPost">3pts is so simple for me</p>
+        </div>
+
+        <div class="post">
+          <div class="nomePessoa">Dikembe Mutombo</div>
+          <p class="conteudoPost">Not in my house, man</p>
+        </div>
+      </article>
+
+      <div role="dialog" aria-labelledby="nomeModalReportarProblema" id="modalReportarProblema">
+        <label id="nomeModalReportarProblema" class="esconderVisualmente">Reportar problema</label>
+        <form name="Conteúdo do modal" class="conteudo-modal">
+          <span id="botaoFechar" onkeydown="verificarBotaoPrecionado(event)" tabindex="0" role="button" aria-label="Fechar" class="fechar" onclick="fecharModal()">&times;</span>
+          <h2>Reporte um problema</h2>
+
+          <input id="descrevaSeuProblemaInput" type="text" placeholder="Descreva seu problema" aria-label="Descreva seu problema" />
+          <button onclick="fecharModal()">Cancelar</button>
+          <button onclick="reportarProblema()" onblur="focarBotaoFecharModal()">Enviar</button>
+        </form>
+      </div>
+    </div>
+
+    
+    <section id="containerLadoDireito">
+
+      <!-- Toda entrada, deve estar debaixo de um form -->
+      <form id="pesquisaContainer">
+        <label class="esconderVisualmente" id="pesquisarLabel">Pesquisar sobre algum assunto na rede social</label>
+        <input type="text" placeholder="Pesquisar um assunto..." aria-labelledby="pesquisarLabel" />
+      </form>
+
+      <!-- Conteúdos que são secundários, devem conter a tag ASIDE -->
+      <aside id="blocoOQueEstaAcontecendo">
+        <ul>
+          <li>Pessoa a: There is something wrong</li>
+          <li>Pessoa b: In the neighborhood</li>
+          <li>Pessoa c: Who we gonna call?</li>
+          <li>Pessoa d: The ghostbusters</li>
+        </ul>
+      </aside>
+
+      <aside id="blocoReportarProblema">
+        <button id="btnReportarProblema" onclick="abrirModal()">Reportar problema</button>
+      </aside>
+
+    </section>
+  </body>
+
+  <script src="index.js"></script>
+</html>
