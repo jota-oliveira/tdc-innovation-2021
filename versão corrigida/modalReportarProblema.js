@@ -18,27 +18,27 @@ export class ModalReportarProblema {
     this.input = this.$(referencias.input);
     this.reportErro = this.$(referencias.reportErro);
     this.btnMensagemBotaoEnviar = this.$(referencias.btnMensagemBotaoEnviar);
-    this.ultimoElemento = this.btnEnviar;
 
     this._escutarTeclaPadraoFechar();
     this._prepararElementos();
   }
 
-  abrir = () => {
+  abrir () {
     this.modal.classList.add('mostrar');
     this.focarBotaoFechar();
   };
 
-  fechar = (event) => {
+  fechar (event) {
     event.preventDefault();
+    this.input.value = '';
     this.modal.classList.remove('mostrar');
   }
 
-  focarBotaoFechar = () => {
+  focarBotaoFechar () {
     this.btnFechar.focus();
   }
 
-  reportarProblema = (event) => {
+  reportarProblema (event) {
     event.preventDefault();
 
     if (this._validarInput()) {
@@ -46,33 +46,33 @@ export class ModalReportarProblema {
     }
   }
 
-  verificarBotaoPrecionado = (eventKeyUp) => {
+  verificarBotaoPrecionado (eventKeyUp) {
     if (this.teclasPadraoAcoes.includes(eventKeyUp.code)) {
       this.fechar(eventKeyUp);    
     }
   }
 
-  _validarInput = () => {
+  _validarInput () {
     try {
       this.formErrors.error = null;
-      this._inputNaoVazio();
-      this._atualizarMensagemErro();
+      this._verificarPreenchimentoInput();
     } catch (error) {
       this.formErrors.error = error.message;
-      this._atualizarMensagemErro();
       return false;
     }
+
+    this._atualizarMensagemErro();
 
     return true;
   }
 
-  _inputNaoVazio = () => {
+  _verificarPreenchimentoInput () {
     if (!this.input.value) {
       throw new Error('Esse campo precisa ser preenchido');
     }
   }
 
-  _atualizarMensagemErro = () => {
+  _atualizarMensagemErro () {
     this.reportErro.innerHTML = this.formErrors.error;
 
     if (this.formErrors.error) {
@@ -89,11 +89,7 @@ export class ModalReportarProblema {
     }
   }
 
-  _corrigirNavegacaoModal = () => {
-    this.ultimoElemento.onblur = this.focarBotaoFechar.bind(this);
-  }
-
-  _escutarTeclaPadraoFechar = () => {
+  _escutarTeclaPadraoFechar () {
     document.addEventListener('keyup', (keyUpEvent) => {
       if (keyUpEvent.code === 'Escape') {
         this.fechar(keyUpEvent);
@@ -101,14 +97,13 @@ export class ModalReportarProblema {
     });
   }
 
-  _prepararElementos = () => {
+  _prepararElementos () {
     this.btnAbrir.onclick = this.abrir.bind(this);
     this.btnFechar.onclick = this.fechar.bind(this);
     this.btnFechar.onkeyup = this.verificarBotaoPrecionado.bind(this);
     this.btnCancelar.onclick = this.fechar.bind(this);
     this.btnEnviar.onclick = this.reportarProblema.bind(this);
+    this.btnEnviar.onblur = this.focarBotaoFechar.bind(this);
     this.input.onblur = this._validarInput.bind(this);
-
-    this._corrigirNavegacaoModal();
   }
 }

@@ -88,6 +88,7 @@
         </div>
       </article>
 
+      <!-- MODAL -->
       <div role="dialog" aria-labelledby="nomeModalReportarProblema" id="modalReportarProblema">
         <label id="nomeModalReportarProblema" class="esconderVisualmente">Reportar problema</label>
         <form name="Conteúdo do modal" class="conteudo-modal">
@@ -96,11 +97,14 @@
 
           <input id="descrevaSeuProblemaInput" aria-describedby="mensagemErroModal" required type="text" placeholder="Descreva seu problema" aria-label="Descreva seu problema" />
           <div id="mensagemErroModal"></div>
-          <button id="btnCancelar">Cancelar</button>
-          <button id="btnEnviar" aria-describedby="mensagemBotao">Enviar</button>
+          <div class="btnModal">
+            <button id="btnCancelar">Cancelar</button>
+            <button id="btnEnviar" aria-describedby="mensagemBotao">Enviar</button>
+          </div>
           <span id="mensagemBotao" class="esconderVisualmente"></span>
         </form>
       </div>
+
     </div>
 
     
