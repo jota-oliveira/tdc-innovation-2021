@@ -91,12 +91,14 @@
       <div role="dialog" aria-labelledby="nomeModalReportarProblema" id="modalReportarProblema">
         <label id="nomeModalReportarProblema" class="esconderVisualmente">Reportar problema</label>
         <form name="Conteúdo do modal" class="conteudo-modal">
-          <span id="botaoFechar" onkeydown="verificarBotaoPrecionado(event)" tabindex="0" role="button" aria-label="Fechar" class="fechar" onclick="fecharModal()">&times;</span>
+          <span id="btnFechar" tabindex="0" role="button" aria-label="Fechar" class="fechar">&times;</span>
           <h2>Reporte um problema</h2>
 
-          <input id="descrevaSeuProblemaInput" type="text" placeholder="Descreva seu problema" aria-label="Descreva seu problema" />
-          <button onclick="fecharModal()">Cancelar</button>
-          <button onclick="reportarProblema()" onblur="focarBotaoFecharModal()">Enviar</button>
+          <input id="descrevaSeuProblemaInput" aria-describedby="mensagemErroModal" required type="text" placeholder="Descreva seu problema" aria-label="Descreva seu problema" />
+          <div id="mensagemErroModal"></div>
+          <button id="btnCancelar">Cancelar</button>
+          <button id="btnEnviar" aria-describedby="mensagemBotao">Enviar</button>
+          <span id="mensagemBotao" class="esconderVisualmente"></span>
         </form>
       </div>
     </div>
@@ -121,11 +123,12 @@
       </aside>
 
       <aside id="blocoReportarProblema">
-        <button id="btnReportarProblema" onclick="abrirModal()">Reportar problema</button>
+        <button id="btnReportarProblema">Reportar problema</button>
       </aside>
 
     </section>
   </body>
 
-  <script src="index.js"></script>
+  <script type="module" src="modalReportarProblema.js"></script>
+  <script type="module" src="index.js"></script>
 </html>
