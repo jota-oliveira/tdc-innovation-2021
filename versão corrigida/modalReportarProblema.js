@@ -56,12 +56,12 @@ export class ModalReportarProblema {
     try {
       this.formErrors.error = null;
       this._verificarPreenchimentoInput();
+      this._atualizarMensagemErro();
     } catch (error) {
       this.formErrors.error = error.message;
+      this._atualizarMensagemErro();
       return false;
     }
-
-    this._atualizarMensagemErro();
 
     return true;
   }
@@ -82,8 +82,8 @@ export class ModalReportarProblema {
       this.btnEnviar.setAttribute("aria-disabled", true);
       this.btnMensagemBotaoEnviar.innerHTML = 'Botão desabilitado porque o formulário está inválido';
     } else {
-      this.btnCancelar.focus();
       this.reportErro.removeAttribute('tabindex');
+      this.btnCancelar.focus();
       this.btnEnviar.setAttribute("aria-disabled", false);
       this.btnMensagemBotaoEnviar.innerHTML = null;
     }
@@ -100,7 +100,7 @@ export class ModalReportarProblema {
   _prepararElementos () {
     this.btnAbrir.onclick = this.abrir.bind(this);
     this.btnFechar.onclick = this.fechar.bind(this);
-    this.btnFechar.onkeyup = this.verificarBotaoPrecionado.bind(this);
+    this.btnFechar.onkeydown = this.verificarBotaoPrecionado.bind(this);
     this.btnCancelar.onclick = this.fechar.bind(this);
     this.btnEnviar.onclick = this.reportarProblema.bind(this);
     this.btnEnviar.onblur = this.focarBotaoFechar.bind(this);

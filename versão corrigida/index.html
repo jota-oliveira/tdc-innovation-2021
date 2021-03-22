@@ -91,7 +91,7 @@
       <!-- MODAL -->
       <div role="dialog" aria-labelledby="nomeModalReportarProblema" id="modalReportarProblema">
         <label id="nomeModalReportarProblema" class="esconderVisualmente">Reportar problema</label>
-        <form name="Conteúdo do modal" class="conteudo-modal">
+        <form class="conteudo-modal">
           <span id="btnFechar" tabindex="0" role="button" aria-label="Fechar" class="fechar">&times;</span>
           <h2>Reporte um problema</h2>
 
@@ -117,19 +117,21 @@
       </form>
 
       <!-- Conteúdos que são secundários, devem conter a tag ASIDE -->
-      <aside id="blocoOQueEstaAcontecendo">
-        <ul>
-          <li>Pessoa a: There is something wrong</li>
-          <li>Pessoa b: In the neighborhood</li>
-          <li>Pessoa c: Who we gonna call?</li>
-          <li>Pessoa d: The ghostbusters</li>
-        </ul>
-      </aside>
+      <aside>
+        <section id="blocoOQueEstaAcontecendo">
+          <ul>
+            <li>Pessoa a: There is something wrong</li>
+            <li>Pessoa b: In the neighborhood</li>
+            <li>Pessoa c: Who we gonna call?</li>
+            <li>Pessoa d: The ghostbusters</li>
+          </ul>
+        </section>
 
-      <aside id="blocoReportarProblema">
-        <button id="btnReportarProblema">Reportar problema</button>
-      </aside>
 
+        <section id="blocoReportarProblema">
+          <button id="btnReportarProblema">Reportar problema</button>
+        </section>
+      </aside>
     </section>
   </body>
 
