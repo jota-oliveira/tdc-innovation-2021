@@ -80,11 +80,13 @@ export class ModalReportarProblema {
       this.reportErro.setAttribute('tabindex', 0);
       this.reportErro.focus();
       this.btnEnviar.setAttribute("aria-disabled", true);
+      this.btnEnviar.classList.add('disabled');
       this.btnMensagemBotaoEnviar.innerHTML = 'Botão desabilitado porque o formulário está inválido';
     } else {
       this.reportErro.removeAttribute('tabindex');
       this.btnCancelar.focus();
       this.btnEnviar.setAttribute("aria-disabled", false);
+      this.btnEnviar.classList.remove('disabled');
       this.btnMensagemBotaoEnviar.innerHTML = null;
     }
   }

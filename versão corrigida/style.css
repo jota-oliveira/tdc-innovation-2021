@@ -30,6 +30,10 @@ button:hover {
   cursor: pointer;
 }
 
+button.disabled {
+  background-color: rgba(100, 100, 100, 0.8);
+}
+
 input {
   height: 3em;
   border: 1px solid #5b696f;
