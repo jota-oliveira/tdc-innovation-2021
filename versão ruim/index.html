@@ -1,18 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+
+<html>
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" type="text/css" href="./style.css" />
 
-    <title>Document</title>
+    <title>Rede social Twistter</title>
   </head>
 
   <body>
-    <div id="menuPrincipal">
+    <section id="menuPrincipal">
       <div class="imgContainer">
-        <img src="./twisterlogo.png"></img>
+        <img src="./twisterlogo.png" />
       </div>
 
       <nav>
@@ -24,118 +25,118 @@
           <li><a href="#">Perfil</a></li>
         </ul>
       </nav>
-    </div>
+    </section>
 
     <div id="container">
-
-      <div id="cabecalho">
+      <header id="cabecalho">
         <h1>Início</h1>
-      </div>
+      </header>
 
       <form id="formTwist">
-        <input type="text" name="twist" placeholder="Escreva seu primeiro twist"></input>
+        <input
+          type="text"
+          name="twist"
+          placeholder="Escreva seu primeiro twist"
+        />
         <button>Twist</button>
       </form>
 
-      <div id="conteudoPrincipalContainer">
+      <article id="conteudoPrincipalContainer">
         <div class="post">
           <div class="nomePessoa">Michael Jordan</div>
-          <div class="conteudoPost">I'm the best ever, and that is it.</div>
+          <p class="conteudoPost">I'm the best ever, and that is it.</p>
         </div>
 
         <div class="post">
           <div class="nomePessoa">Pascal Siakam</div>
-          <div class="conteudoPost">#weTheNorth, go raptors!</div>
+          <p class="conteudoPost">#weTheNorth, go raptors!</p>
         </div>
 
         <div class="post">
           <div class="nomePessoa">Fred Vanvleet</div>
-          <div class="conteudoPost">3pts is so simple for me</div>
+          <p class="conteudoPost">3pts is so simple for me</p>
         </div>
 
         <div class="post">
           <div class="nomePessoa">Dikembe Mutombo</div>
-          <div class="conteudoPost">Not in my house, man</div>
+          <p class="conteudoPost">Not in my house, man</p>
         </div>
 
         <div class="post">
           <div class="nomePessoa">Lebron James</div>
-          <div class="conteudoPost">Black lives matter... </div>
+          <p class="conteudoPost">Black lives matter...</p>
         </div>
 
         <div class="post">
           <div class="nomePessoa">Pascal Siakam</div>
-          <div class="conteudoPost">#weTheNorth, go raptors!</div>
+          <p class="conteudoPost">#weTheNorth, go raptors!</p>
         </div>
 
         <div class="post">
           <div class="nomePessoa">Fred Vanvleet</div>
-          <div class="conteudoPost">3pts is so simple for me</div>
+          <p class="conteudoPost">3pts is so simple for me</p>
         </div>
 
         <div class="post">
           <div class="nomePessoa">Dikembe Mutombo</div>
-          <div class="conteudoPost">Not in my house, man</div>
+          <p class="conteudoPost">Not in my house, man</p>
         </div>
-
-        <div class="post">
-          <div class="nomePessoa">Lebron James</div>
-          <div class="conteudoPost">Black lives matter... </div>
-        </div>
-
-        <div class="post">
-          <div class="nomePessoa">Pascal Siakam</div>
-          <div class="conteudoPost">#weTheNorth, go raptors!</div>
-        </div>
-
-        <div class="post">
-          <div class="nomePessoa">Fred Vanvleet</div>
-          <div class="conteudoPost">3pts is so simple for me</div>
-        </div>
-
-        <div class="post">
-          <div class="nomePessoa">Dikembe Mutombo</div>
-          <div class="conteudoPost">Not in my house, man</div>
-        </div>
-
-        <div class="post">
-          <div class="nomePessoa">Lebron James</div>
-          <div class="conteudoPost">Black lives matter... </div>
-        </div>
-      </div>
+      </article>
 
       <div id="modalReportarProblema">
-        <div class="conteudo-modal">
-          <span class="fechar" onclick="fecharModal()">&times;</span>
-          <p>Reporte um problema</p>
+        <form class="conteudo-modal">
+          <span id="btnFechar" onclick="fecharModal()" class="fechar"
+            >&times;</span
+          >
+          <h2>Reporte um problema</h2>
 
-          <input type="text" placeholder="Descreva seu problema"></input>
-          <button>Enviar</button>
+          <input
+            id="descrevaSeuProblemaInput"
+            required
+            type="text"
+            placeholder="Descreva seu problema"
+          />
+          <div class="btnModal">
+            <button id="btnCancelar" onclick="fecharModal()">Cancelar</button>
+            <button id="btnEnviar">Enviar</button>
+          </div>
+        </form>
+      </div>
+
+      <section id="containerLadoDireito">
+        <form id="pesquisaContainer">
+          <input type="text" placeholder="Pesquisar um assunto..." />
+        </form>
+
+        <div>
+          <section id="blocoOQueEstaAcontecendo">
+            <ul>
+              <li>Pessoa a: There is something wrong</li>
+              <li>Pessoa b: In the neighborhood</li>
+              <li>Pessoa c: Who we gonna call?</li>
+              <li>Pessoa d: The ghostbusters</li>
+            </ul>
+          </section>
+
+          <section id="blocoReportarProblema">
+            <button id="btnReportarProblema" onclick="abrirModal()">
+              Reportar problema
+            </button>
+          </section>
         </div>
-      </div>
-    </div>
-
-    <div id="containerLadoDireito">
-
-      <div id="pesquisaContainer">
-        <input type="text" placeholder="Pesquisar um assunto..."></input>
-      </div>
-
-      <div id="blocoOQueEstaAcontecendo">
-        <ul>
-          <li>Pessoa a: There is something wrong</li>
-          <li>Pessoa b: In the neighborhood</li>
-          <li>Pessoa c: Who we gonna call?</li>
-          <li>Pessoa d: The ghostbusters</li>
-        </ul>
-      </div>
-
-      <div id="blocoReportarProblema">
-        <button id="btnReportarProblema" onclick="abrirModal()">Reportar problema</button>
-      </div>
-
+      </section>
     </div>
   </body>
 
-  <script src="index.js"></script>
+  <script>
+    const modal = document.getElementById("modalReportarProblema");
+
+    function abrirModal() {
+      modal.classList.add("mostrar");
+    }
+
+    function fecharModal() {
+      modal.classList.remove("mostrar");
+    }
+  </script>
 </html>

@@ -1,6 +1,6 @@
 :root {
   --brand-color-01: #264653;
-  --brand-color-02: #2a9d8f;
+  --brand-color-02: #185d56;
   --brand-color-03: #1c6b62;
 
   --color-text-main: #1b1b24;
@@ -80,20 +80,6 @@ input {
 #menuPrincipal ul li:hover > a {
   color: var(--brand-color-01);
 }
-
-/* @media only screen and (max-width: 800px) {
-  #menuPrincipal {
-    top: auto;
-    bottom: 0;
-    position: fixed;
-    display: inline-block;
-    height: 40px;
-    width: 100%;
-    background-color: rgba(145, 56, 56, 0.84);
-    box-shadow: 0 0.05em 0.1em 0.05em rgba(145, 56, 56, 0.84);
-    padding: 8px;
-  }
-} */
 
 #container {
   margin: 0 258px;
@@ -182,8 +168,8 @@ input {
 
 #blocoReportarProblema button {
   background-color: transparent;
-  border: solid 2px #ec8734;
-  color: #ec8734;
+  border: solid 2px var(--brand-color-02);
+  color: var(--brand-color-02);
 }
 
 #modalReportarProblema {
@@ -252,4 +238,8 @@ input {
   overflow: hidden;
   padding: 0;
   position: absolute;
+}
+
+#mensagemErroModal {
+  color: #a11212;
 }

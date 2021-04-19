@@ -1,12 +1,24 @@
-import { ModalReportarProblema } from './modalReportarProblema.js';
+import { FormReportarProblema } from './modules/index.js';
+import { Modal } from './ui/index.js';
 
-new ModalReportarProblema({
+const referenciasModalReportarProblema = {
   modal: '#modalReportarProblema',
   btnFechar: '#btnFechar',
+  btnAbrir: '#btnReportarProblema',
+  btnMensagemBotaoEnviar: "#mensagemBotao"
+};
+
+const referenciasFormReportarProblema = {
   btnCancelar: '#btnCancelar',
   btnEnviar: '#btnEnviar',
-  btnAbrir: '#btnReportarProblema',
   input: '#descrevaSeuProblemaInput',
   reportErro: '#mensagemErroModal',
-  btnMensagemBotaoEnviar: "#mensagemBotao",
-});
+  btnMensagemBotaoEnviar: "#mensagemBotao"
+}
+
+const modal = new Modal(referenciasModalReportarProblema);
+
+referenciasFormReportarProblema['acaoCancelar'] = modal.fechar.bind(modal);
+new FormReportarProblema(referenciasFormReportarProblema);
+
+

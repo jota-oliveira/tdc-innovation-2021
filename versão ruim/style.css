@@ -1,5 +1,47 @@
-body {
+:root {
+  --brand-color-01: #8a1111;
+  --brand-color-02: #eb5a50;
+  --brand-color-03: #ca3527;
+
+  --color-text-main: #1b1b24;
+  --color-error-message: #a11212;
+}
+
+html {
   padding: 8px;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #fdf6f6;
+}
+
+button {
+  background-color: var(--brand-color-02);
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  height: 44px;
+  min-width: 80px;
+  color: #fff;
+  font-weight: bold;
+  padding: 8px;
+  margin: 8px 0;
+}
+
+button:hover {
+  background-color: var(--brand-color-03);
+  cursor: pointer;
+}
+
+button.disabled {
+  background-color: rgba(100, 100, 100, 0.8);
+}
+
+input {
+  height: 3em;
+  border: 1px solid #5b696f;
+  box-shadow: inset -2px -2px 6px 0px #eeeeee;
+  color: var(--brand-color-01);
+  border-radius: 2px;
+  font-size: 1rem;
 }
 
 #menuPrincipal {
@@ -9,8 +51,7 @@ body {
   display: inline-block;
   height: 100%;
   width: 250px;
-  background-color: rgba(145, 56, 56, 100);
-  box-shadow: 0 0.05em 0.1em 0.05em rgba(145, 56, 56, 0.84);
+  background-color: var(--brand-color-01);
   padding: 8px;
 }
 
@@ -21,47 +62,25 @@ body {
 #menuPrincipal ul li > a {
   color: #fff;
   font-weight: bold;
-  font-size: larger;
+}
+
+#menuPrincipal ul {
+  list-style: none;
 }
 
 #menuPrincipal ul li {
-  padding: 2px;
-  border-radius: 10px;
+  padding: 4px;
   margin: 16px 0;
 }
 
 #menuPrincipal ul li:hover {
   background-color: #fff;
-  color: rgb(145, 56, 56);
+  color: var(--brand-color-01);
 }
 
 #menuPrincipal ul li:hover > a {
-  color: rgb(145, 56, 56);
+  color: var(--brand-color-01);
 }
-
-#menuPrincipal ul ::before {
-  background-color: rgb(145, 56, 56);
-  min-width: 10px;
-  min-height: 10px;
-  display: inline-block;
-  margin-left: -22px;
-  margin-right: 22px;
-  content: " ";
-}
-
-/* @media only screen and (max-width: 800px) {
-  #menuPrincipal {
-    top: auto;
-    bottom: 0;
-    position: fixed;
-    display: inline-block;
-    height: 40px;
-    width: 100%;
-    background-color: rgba(145, 56, 56, 0.84);
-    box-shadow: 0 0.05em 0.1em 0.05em rgba(145, 56, 56, 0.84);
-    padding: 8px;
-  }
-} */
 
 #container {
   margin: 0 258px;
@@ -75,25 +94,10 @@ body {
 #formTwist > input {
   width: 100%;
   height: 3em;
-  border: 2px solid rgba(145, 56, 56, 0.84);
-  color: rgb(145, 56, 56);
-  font-size: large;
+  color: var(--brand-color-01);
   border-radius: 5px;
   padding: 0.2em;
-}
-
-#formTwist > button {
-  border: 2px solid rgba(145, 56, 56, 0.84);
-  background-color: rgb(145, 56, 56);
-  border-radius: 10px;
-  height: 40px;
-  min-width: 55px;
-  color: #fff;
-  font-size: medium;
-  font-weight: bold;
-  padding: 8px;
-  margin: 8px;
-  box-shadow: 0.05em 0.05em 0.5em 0.05em rgba(145, 56, 56, 0.84);
+  font-size: 1.2rem;
 }
 
 #conteudoPrincipalContainer {
@@ -108,17 +112,15 @@ body {
 }
 
 #conteudoPrincipalContainer > .post .nomePessoa {
-  font-size: medium;
   font-weight: bolder;
 }
 
 #conteudoPrincipalContainer > .post .conteudoPost {
-  font-size: large;
   font-weight: medium;
 }
 
 #containerLadoDireito {
-  border-left: 2px solid rgba(145, 56, 56, 0.84);
+  border-left: 2px solid var(--brand-color-01);
   height: 100%;
   top: 0;
   right: 0;
@@ -132,15 +134,17 @@ body {
   width: 250px;
   position: fixed;
   text-align: center;
-  background-color: rgb(145, 56, 56);
+  background-color: var(--brand-color-01);
 }
 
 #pesquisaContainer input {
-  border: 1px solid rgb(145, 56, 56);
-  border-radius: 10px;
+  border: 1px solid var(--brand-color-01);
+  border-radius: 5px;
   height: 20px;
   margin: 8px;
   padding: 8px;
+  width: 80%;
+  font-size: 1rem;
 }
 
 #blocoOQueEstaAcontecendo {
@@ -150,9 +154,8 @@ body {
 #blocoOQueEstaAcontecendo ul li {
   padding: 2px;
   border-radius: 10px;
-  color: rgb(145, 56, 56);
+  color: var(--color-text-main);
   font-weight: bold;
-  font-size: medium;
 }
 
 #blocoReportarProblema {
@@ -165,17 +168,9 @@ body {
 }
 
 #blocoReportarProblema button {
-  border: 2px solid rgba(145, 56, 56, 0.84);
-  background-color: rgb(145, 56, 56);
-  border-radius: 10px;
-  height: 40px;
-  min-width: 55px;
-  color: #fff;
-  font-size: medium;
-  font-weight: bold;
-  padding: 8px;
-  margin: 8px;
-  box-shadow: 0.05em 0.05em 0.5em 0.05em rgba(145, 56, 56, 0.84);
+  background-color: transparent;
+  border: solid 2px var(--brand-color-02);
+  color: var(--brand-color-02);
 }
 
 #modalReportarProblema {
@@ -187,7 +182,15 @@ body {
   width: 100%;
   height: 100%;
   overflow: auto;
-  background-color: rgba(0,0,0,0.4);
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+#modalReportarProblema input {
+  width: 90%;
+}
+
+.btnModal {
+  margin-top: 16px;
 }
 
 #modalReportarProblema.mostrar {
@@ -195,7 +198,7 @@ body {
 }
 
 .conteudo-modal {
-  background-color: #FFF;
+  background-color: #fff;
   margin: 15% auto;
   padding: 20px;
   border: 1px solid #888;
@@ -216,26 +219,17 @@ body {
   cursor: pointer;
 }
 
-#modalReportarProblema button {
-  border: 2px solid rgba(145, 56, 56, 0.84);
-  background-color: rgb(145, 56, 56);
-  border-radius: 10px;
-  height: 40px;
-  min-width: 55px;
-  color: #fff;
-  font-size: medium;
-  font-weight: bold;
-  padding: 8px;
-  margin: 8px;
-  box-shadow: 0.05em 0.05em 0.5em 0.05em rgba(145, 56, 56, 0.84);
+#btnCancelar {
+  background-color: transparent;
+  border: solid 2px var(--brand-color-02);
+  color: var(--brand-color-02);
 }
 
-#modalReportarProblema input {
-  width: 100%;
-  height: 3em;
-  border: 2px solid rgba(145, 56, 56, 0.84);
-  color: rgb(145, 56, 56);
-  font-size: medium;
-  border-radius: 5px;
-  padding: 0.2em;
+#btnCancelar:hover {
+  border: solid 2px var(--brand-color-03);
+  color: var(--brand-color-03);
+}
+
+#mensagemErroModal {
+  color: var(--color-error-message);
 }

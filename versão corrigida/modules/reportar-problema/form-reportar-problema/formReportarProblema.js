@@ -1,41 +1,19 @@
-export class ModalReportarProblema {
+export class FormReportarProblema {
 
   formErrors = {
     error: null
   };
 
-  get teclasPadraoAcoes() {
-    return ['Space', 'Enter'];
-  }
-
   constructor(referencias) {
     this.$ = document.querySelector.bind(document);
-    this.modal = this.$(referencias.modal);
-    this.btnFechar = this.$(referencias.btnFechar);
-    this.btnCancelar = this.$(referencias.btnCancelar);
     this.btnEnviar = this.$(referencias.btnEnviar);
-    this.btnAbrir = this.$(referencias.btnAbrir);
+    this.btnCancelar = this.$(referencias.btnCancelar);
+    this.acaoCancelar = referencias.acaoCancelar;
     this.input = this.$(referencias.input);
     this.reportErro = this.$(referencias.reportErro);
     this.btnMensagemBotaoEnviar = this.$(referencias.btnMensagemBotaoEnviar);
 
-    this._escutarTeclaPadraoFechar();
     this._prepararElementos();
-  }
-
-  abrir () {
-    this.modal.classList.add('mostrar');
-    this.focarBotaoFechar();
-  };
-
-  fechar (event) {
-    event.preventDefault();
-    this.input.value = '';
-    this.modal.classList.remove('mostrar');
-  }
-
-  focarBotaoFechar () {
-    this.btnFechar.focus();
   }
 
   reportarProblema (event) {
@@ -43,12 +21,6 @@ export class ModalReportarProblema {
 
     if (this._validarInput()) {
       alert('Dados enviados!');
-    }
-  }
-
-  verificarBotaoPrecionado (eventKeyUp) {
-    if (this.teclasPadraoAcoes.includes(eventKeyUp.code)) {
-      this.fechar(eventKeyUp);    
     }
   }
 
@@ -84,28 +56,19 @@ export class ModalReportarProblema {
       this.btnMensagemBotaoEnviar.innerHTML = 'Botão desabilitado porque o formulário está inválido';
     } else {
       this.reportErro.removeAttribute('tabindex');
-      this.btnCancelar.focus();
+      this.btnEnviar.focus();
       this.btnEnviar.setAttribute("aria-disabled", false);
       this.btnEnviar.classList.remove('disabled');
       this.btnMensagemBotaoEnviar.innerHTML = null;
     }
   }
 
-  _escutarTeclaPadraoFechar () {
-    document.addEventListener('keyup', (keyUpEvent) => {
-      if (keyUpEvent.code === 'Escape') {
-        this.fechar(keyUpEvent);
-      }
-    });
-  }
-
   _prepararElementos () {
-    this.btnAbrir.onclick = this.abrir.bind(this);
-    this.btnFechar.onclick = this.fechar.bind(this);
-    this.btnFechar.onkeydown = this.verificarBotaoPrecionado.bind(this);
-    this.btnCancelar.onclick = this.fechar.bind(this);
     this.btnEnviar.onclick = this.reportarProblema.bind(this);
-    this.btnEnviar.onblur = this.focarBotaoFechar.bind(this);
     this.input.onblur = this._validarInput.bind(this);
+
+    if (this.btnCancelar && this.acaoCancelar) {
+      this.btnCancelar.onclick = this.acaoCancelar;
+    }
   }
 }

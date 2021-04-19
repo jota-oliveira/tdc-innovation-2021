@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" type="text/css" href="./style.css" />
 
+    <!-- Pronuncia por tag específica -->
     <title>Rede social <span lang="en">Twistter</span></title>
   </head>
 
@@ -19,30 +20,33 @@
       </div>
 
       <nav aria-label="Menu de ações">
-        <!-- Atribuindo a função de barra de menu, é um container de "menuitem" -->
-        <ul
-          role="menubar"
-          aria-label="Menu de ações"
-        >
-          <li><a role="menuitem" href="#">Início</a></li>
-          <li><a role="menuitem" href="#">Explorar</a></li>
-          <li><a role="menuitem" href="#">Notificações</a></li>
-          <li><a role="menuitem" href="#">Mensagens</a></li>
-          <li><a role="menuitem" href="#">Perfil</a></li>
+        <!-- Atribuindo o papel(role) de barra de menu, é um container de "menuitem" -->
+        <ul aria-label="Menu de ações">
+          <li><a href="#">Início</a></li>
+          <li><a href="#">Explorar</a></li>
+          <li><a href="#">Notificações</a></li>
+          <li><a href="#">Mensagens</a></li>
+          <li><a href="#">Perfil</a></li>
         </ul>
       </nav>
     </section>
 
     <!-- Definimos onde está nosso conteúdo principal -->
     <main id="container">
-
       <header id="cabecalho">
         <h1>Início</h1>
       </header>
 
       <form id="formTwist">
-        <label class="esconderVisualmente" id="twistAction">Pesquisar sobre algum assunto na rede social</label>
-        <input  type="text" name="twist" placeholder="Escreva seu primeiro twist" aria-labelledby="twistAction" />
+        <label class="esconderVisualmente" id="twistAction"
+          >Pesquisar sobre algum assunto na rede social</label
+        >
+        <input
+          type="text"
+          name="twist"
+          placeholder="Escreva seu primeiro twist"
+          aria-labelledby="twistAction"
+        />
         <button>Twist</button>
       </form>
 
@@ -69,7 +73,7 @@
 
         <div class="post">
           <div class="nomePessoa">Lebron James</div>
-          <p class="conteudoPost">Black lives matter... </p>
+          <p class="conteudoPost">Black lives matter...</p>
         </div>
 
         <div class="post">
@@ -89,52 +93,77 @@
       </article>
 
       <!-- MODAL -->
-      <div role="dialog" aria-labelledby="nomeModalReportarProblema" id="modalReportarProblema">
-        <label id="nomeModalReportarProblema" class="esconderVisualmente">Reportar problema</label>
+      <!-- Papel de dialog, que não usado originalmente por ainda não ser aceito em todos os navegadores -->
+      <div
+        role="dialog"
+        aria-labelledby="nomeModalReportarProblema"
+        id="modalReportarProblema"
+      >
+        <label id="nomeModalReportarProblema" class="esconderVisualmente"
+          >Reportar problema</label
+        >
         <form class="conteudo-modal">
-          <span id="btnFechar" tabindex="0" role="button" aria-label="Fechar" class="fechar">&times;</span>
+          <!-- Papel de botão, por isso você deve usar o botão de preferência -->
+          <span
+            id="btnFechar"
+            tabindex="0"
+            role="button"
+            aria-label="Fechar"
+            class="fechar"
+            >&times;</span
+          >
           <h2>Reporte um problema</h2>
 
-          <input id="descrevaSeuProblemaInput" aria-describedby="mensagemErroModal" required type="text" placeholder="Descreva seu problema" aria-label="Descreva seu problema" />
+          <input
+            id="descrevaSeuProblemaInput"
+            aria-describedby="mensagemErroModal"
+            required
+            type="text"
+            placeholder="Descreva seu problema"
+            aria-label="Descreva seu problema"
+          />
           <div id="mensagemErroModal"></div>
           <div class="btnModal">
             <button id="btnCancelar">Cancelar</button>
-            <button id="btnEnviar" aria-describedby="mensagemBotao">Enviar</button>
+            <button id="btnEnviar" aria-describedby="mensagemBotao">
+              Enviar
+            </button>
           </div>
           <span id="mensagemBotao" class="esconderVisualmente"></span>
         </form>
       </div>
 
-    </div>
+      <section id="containerLadoDireito">
+        <!-- Toda entrada, deve estar debaixo de um form -->
+        <form id="pesquisaContainer">
+          <label class="esconderVisualmente" id="pesquisarLabel"
+            >Pesquisar sobre algum assunto na rede social</label
+          >
+          <input
+            type="text"
+            placeholder="Pesquisar um assunto..."
+            aria-labelledby="pesquisarLabel"
+          />
+        </form>
 
-    
-    <section id="containerLadoDireito">
+        <!-- Conteúdos que são secundários, devem conter a tag ASIDE -->
+        <aside>
+          <section id="blocoOQueEstaAcontecendo">
+            <ul>
+              <li>Pessoa a: There is something wrong</li>
+              <li>Pessoa b: In the neighborhood</li>
+              <li>Pessoa c: Who we gonna call?</li>
+              <li>Pessoa d: The ghostbusters</li>
+            </ul>
+          </section>
 
-      <!-- Toda entrada, deve estar debaixo de um form -->
-      <form id="pesquisaContainer">
-        <label class="esconderVisualmente" id="pesquisarLabel">Pesquisar sobre algum assunto na rede social</label>
-        <input type="text" placeholder="Pesquisar um assunto..." aria-labelledby="pesquisarLabel" />
-      </form>
-
-      <!-- Conteúdos que são secundários, devem conter a tag ASIDE -->
-      <aside>
-        <section id="blocoOQueEstaAcontecendo">
-          <ul>
-            <li>Pessoa a: There is something wrong</li>
-            <li>Pessoa b: In the neighborhood</li>
-            <li>Pessoa c: Who we gonna call?</li>
-            <li>Pessoa d: The ghostbusters</li>
-          </ul>
-        </section>
-
-
-        <section id="blocoReportarProblema">
-          <button id="btnReportarProblema">Reportar problema</button>
-        </section>
-      </aside>
-    </section>
+          <section id="blocoReportarProblema">
+            <button id="btnReportarProblema">Reportar problema</button>
+          </section>
+        </aside>
+      </section>
+    </main>
   </body>
 
-  <script type="module" src="modalReportarProblema.js"></script>
   <script type="module" src="index.js"></script>
 </html>
